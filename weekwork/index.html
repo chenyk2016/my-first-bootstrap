@@ -1,65 +1,541 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>Bootstrap 101 Template</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <style type="text/css">
-      .navbar{ background-color: #283036; }
-    </style>
-  </head>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+    .body { font-size: .9em; }
+    .container { max-width: 1100px; padding: 0; }
 
-  <body>
-    <div class="topper">
-      <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Messages</a></li>
-      </ul>
+
+    .topper{ background-color: #1f272d; font-size: 12px; color: #666; line-height: 20px ;}
+    .topper .column{ height: 40px; line-height: 40px; }
+    .topper-row{  height: 100%; }
+    .topper .column span{ padding-right: 20px; }
+    .top-icon{ background: url(images/awesome_modify_03.jpg) no-repeat ; height: 20px;width: 20px; display: inline-block;vertical-align: middle; margin-right: 5px;}
+    .icon-2{ background-image: url(images/awesome_modify_05.jpg); }
+    .icon-3{ background-image: url(images/awesome_modify_07.jpg); }
+    .topper .icon-link{ width: 20px;height: 20px;display: inline-block; background: url(images/awesome_modify_09.jpg) no-repeat;margin:10px 5px 0 0;   }
+    .topper .icon-link:nth-child(2){ background-image: url(images/awesome_modify_11.jpg);   }
+    .topper .icon-link:nth-child(3){ background-image: url(images/awesome_modify_13.jpg);   }
+    .topper .icon-link:nth-child(4){ background-image: url(images/awesome_modify_15.jpg);   }
+    .topper .icon-link:nth-child(5){ background-image: url(images/awesome_modify_17.jpg);   }
+
+    .top-nav{ background-color: #283036;padding: 0px; height: 50px; }
+    .top-nav .container-fluid{ padding: 0; }
+    .top-logo{ height: 40px; margin-top: 5px; }
+    .navbar{ margin-bottom: 0; background-color: transparent; border: none; }
+    .top-nav .nav li a{ border-top: 3px solid transparent; height: 47px; z-index: 10;}
+    .top-nav .nav li.active a{ border-top-color: #f04949; }
+
+    .main { background-color: #f04949; color: #fff; font-size:1em; padding: 20px 0;}
+    .main .img-responsive{ padding: 10%; min-height: 120px; min-width: 120px;}
+    .main h4{ font-size: 2em; padding-top: 20px; }
+    .main-empty{ height: 30px;width: 100%; }
+      
+    .features .intro{  padding: 30px; }
+    .features .collapse{ padding-bottom: 20px;}
+    .features .nav{ border:1px solid red; margin-top: 10px;  border-radius: 5px; overflow: hidden; }
+    .features .nav li{ position: relative; }
+    .features .nav li a{  padding: 5px 15px; border-right: 1px solid red; background-color: transparent; }
+    .features .nav li:last-child a{ border-right: none; }
+    .features .nav li.ac{ background-color: red; }
+    .features .nav li.ac a{ color: #fff; }
+    .features h2{  padding-bottom: 20px; }
+    .features .thumbnail{ background-color: #ebebeb; padding: 3px; max-width: 250px;}
+    .features .thumbnail.active{ background-color: #f24e4e;  }
+    .features .thumbnail.active .caption{ color: #fff;  }
+    .features .thumbnail .caption{ color: #000; font-size: 12px; }
+    .features .thumbnail .img-responsive{  padding-bottom: 10px; }
+    .features .thumbnail h3{  font-size: 16px; margin-bottom: 0px; }
+    .features .thumbnail p{ margin-bottom: 0px; }
+    .features .column{ padding: 10px; }
+
+    .purchase { color: #fff; background: url(images/tc110.png) no-repeat ; background-size: cover; position: relative;  }
+    .purchase .module{ width: 100%; height: 100%; opacity: 0.7; position: absolute;top:0; left: 0; background-color: #333;   }
+    .purchase .jumbotron{ background: transparent; position: relative;}
+    .manner { padding: 40px 0; }
+    .manner .column { padding: 20px 10px; font-size: 12px;}
+    .manner img { width: 50px; }
+
+    .about { font-size: 13px; padding-bottom: 40px; color: #666}
+    .about h3{ padding-bottom: 20px; font-size: 20px; }
+    .about h4{ font-size: 16px; line-height: 24px;}
+    .about .row{ padding: 0 0px; }
+    .about .column{ margin-bottom: 30px;}
+    .about .photo { margin-right: 10px; width: 150px;height: 150px; border-top: 4px solid red; }
+
+    .team { font-size: 14px; font-weight: normal; }
+    .team .carousel{  padding-top: 200px; padding-bottom: 50px; background-color:#f04949; color: #fff; }
+    .team .container { max-width: 900px; padding: 0 50px; }
+    .team .carousel-indicators { top: 8%; right: -20%; left: auto; bottom: auto; }
+    .team .column { padding: 0 ; }
+    .team .img-circle { width: 150px; }
+    .team .carousel-caption { top: 0%; }
+    .team .person-name { padding-top: 20px; color: #ccc; }
+
+    .footer { background-color: #283036; color: #ccc; font-size: 12px; border: 1px solid transparent; text-align: center; padding: 20px; }
+    .footer h3{ padding: 20px; }
+    .footer img{ height: 40px; }
+  </style>
+</head>
+
+<body>
+  <!-- 顶部 -->
+  <div class="topper ">
+    <div class="inner">
+    </div> 
+    <div class="container">
+      <div class="row topper-row">
+       <div class="column col-xs-6 col-sm-9">
+        <span class="hidden-xs">
+          <s class="top-icon icon-1"></s>
+          Sunday, February 16 ,2014
+        </span>
+        <span><s class="top-icon icon-2"></s>  +86 13888888888 </span>
+        <span class="hidden-xs">
+          <s class="top-icon icon-3"></s>
+          yourmail@gmail.com
+        </span>
+       </div>
+       <div class="right column col-sm-6 text-right col-sm-3">
+        <a class="icon-link" href="##"></a>
+        <a class="icon-link" href="##"></a>
+        <a class="icon-link" href="##"></a>
+        <a class="icon-link" href="##"></a>
+        <a class="icon-link" href="##"></a>
+       </div>
+      </div>
     </div>
+  </div>
+  <!-- 主导航 -->
+  <div class="top-nav">
 
-    <nav class="navbar navbar-reverse " role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">121212111222</a>
-        </div>
+    <div class="container">
+      <nav class="navbar navbar-inverse  " role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header ">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            </button>
+            <img class="top-logo" src="images/logo.png" alt="">
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
+            <li class="active"><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
 
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+  </div>  
+
+  <!-- main -->
+  <div class="main ">
+    <div class="container">
+      <div class="row">
+        <div class="column col-xs-4">
+          <img src="images/img.png" class="img-responsive pull-left" alt="Responsive image">
+        </div>
+        <div class="column col-xs-8">
+          <div class="main-empty visible-lg-block"></div>
+          <h4 >An Amazing Responsive wordpress theme</h4>
+        </div>
+        <div class="column col-xs-12 col-sm-8">
+          <p>Lorem ipsum ex vix illud nonummy novum tation et his. At vix scriptaset patrioque scribentur, at pro fugit erts verterem molestiae, sed et vivendo ali Lorem ipsum ex vix illud nonummy, novum tation et his. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus.</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <!-- features -->
+  <div class="features text-center">
+
+    <div class="container">
+      <div class="intro">
+        <h2 class="text-center">Some Amazing Features</h2>
+        <p class="text-center">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at.Cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. Duis ultricies pharetra magna. Donec accumsan malesuada orci. Donec sit amet erorem ipsum dolor sit amet consectetuer adipiscing elit. Mauris fermentum dictum magna.</p>
+      </div>
+      
+      <!-- 小导航 -->
+      <nav class="navbar navbar-default  " role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header ">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#features-navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Recent Portfolio</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="features-navbar">
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="ac"><a href="#">ALL</a></li>
+              <li><a href="#">CATEGORY1</a></li>
+              <li><a href="#">CATEGORY2</a></li>
+              <li><a href="#">CATEGORY3</a></li>
+
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav> 
+
+      <div class="row features-cover">
+        <div class="column col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="images/tc 114.png" class="img-responsive pull-left" alt="Responsive image">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>Quisque euismod orci ut et ..</p>
+            </div>
+          </div>
+        </div>
+        <div class="column col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="images/tc 113.png" class="img-responsive pull-left" alt="Responsive image">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>Quisque euismod orci ut et ..</p>
+              
+            </div>
+          </div>
+        </div>
+        <!-- 清除浮动 -->
+        <div class="clearfix visible-sm-block visible-xs-block"></div>
+
+        <div class="column col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="images/tc 114.png" class="img-responsive pull-left" alt="Responsive image">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>Quisque euismod orci ut et ..</p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="column col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <img src="images/tc 115.png" class="img-responsive pull-left" alt="Responsive image">
+            <div class="caption">
+              <h3>Thumbnail label</h3>
+              <p>Quisque euismod orci ut et ..</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+  <!-- purchase -->
+  <div class="purchase text-center">
+    <div class="module"></div>
+    <div class="jumbotron">
+      <h2>Welcome to our website!</h2>
+      <p>Welcome to our website!</p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+  </div>
+  <!-- manner -->
+  <div class="manner">
+    <div class="container">
+      <div class="row">
+        <div class="column col-xs-12 col-md-4">
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img src="images/icoy_03.jpg"  alt="icon">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Full responsive</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column col-xs-12 col-md-4">
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img src="images/icoy_03.jpg"  alt="icon">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Full responsive</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+          </div>
+        </div>
+        <div class="column col-xs-12 col-md-4">
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img src="images/icoy_03.jpg"  alt="icon">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">Full responsive</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet ollicitudin.Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- about -->
+  <div class="about">
+    <div class="container">
+      <div class="row ">
+        <div class="news col-sm-12 col-md-8">
+          <h3>Latest News</h3>
+          <div class="row ">
+            <div class="column col-xs-12 col-sm-6 ">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="photo" src="images/tc 121.png"  alt="icon">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Hello World! This is my first post.</h4>
+                  <p>Cum soccis natoquo pennatibus et magins dis pennatikus montese,nasatur ridiculus mus</p>
+                </div>
+              </div>
+            </div>
+            <div class="column col-xs-12 col-sm-6 ">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="photo" src="images/tc 121.png"  alt="icon">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Hello World! This is my first post.</h4>
+                  <p>Cum soccis natoquo pennatibus et magins dis pennatikus montese,nasatur ridiculus mus</p>
+                </div>
+              </div>
+            </div>
+            <div class="column col-xs-12 col-sm-6 ">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="photo" src="images/tc 121.png"  alt="icon">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Hello World! This is my first post.</h4>
+                  <p>Cum soccis natoquo pennatibus et magins dis pennatikus montese,nasatur ridiculus mus</p>
+                </div>
+              </div>
+            </div>
+            <div class="column col-xs-12 col-sm-6 ">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="photo" src="images/tc 121.png"  alt="icon">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Hello World! This is my first post.</h4>
+                  <p>Cum soccis natoquo pennatibus et magins dis pennatikus montese,nasatur ridiculus mus</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="service col-sm-12 col-md-4">
+          <h3>Our Services</h3>
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Collapsible Group Item #1
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa 
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Collapsible Group Item #2
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua 
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Collapsible Group Item #3
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+  </div>
+  <!-- team  -->
+  <div class="team">
+
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <!-- 栅格img -->
+          <div class="container">
+            <div class="row">
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="carousel-caption">
+            
+          </div>
+        </div>
+        <div class="item">
+          <!-- 栅格img -->
+          <div class="container">
+            <div class="row">
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="carousel-caption">
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+      <!-- caption -->
+      <div class="carousel-caption">
+        <h3>Our Team</h3>
+        <p>orem ipsum dolor sit amet, consectetur scing elit. Ut volutpat rutrsit amet, consectetuum eros sectetur.Lorem ipsum dolorpsusit amet ollicitudin.Lorem ipsum dolor sit etur.Lorem ipsum dolorpsu.Lorem ipsum dolorpsum dolor sitamet, consectetur scing elit. Ut volutpat rutrum e</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+  
+      <h3><img src="images/logo.png" alt="logo"></h3>
+      <p>COPYRIGHT BY 2012 AWESOME</p>
+      <p>COPYRIGHT BY 2012 AWESOME | PRIVACY STATEMENT | TERMS OF USE</p>
+    
+  </div>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-3.1.0.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+    
+
+  </script>
+</body>
 </html>
+
+
+
