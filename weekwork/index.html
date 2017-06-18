@@ -17,7 +17,7 @@
   <![endif]-->
   <style type="text/css">
     .body { font-size: .9em; }
-    .container { max-width: 1100px; padding: 0; }
+    .container { max-width: 1000px; padding: 0; }
 
 
     .topper{ background-color: #1f272d; font-size: 12px; color: #666; line-height: 20px ;}
@@ -33,13 +33,16 @@
     .topper .icon-link:nth-child(4){ background-image: url(images/awesome_modify_15.jpg);   }
     .topper .icon-link:nth-child(5){ background-image: url(images/awesome_modify_17.jpg);   }
 
-    .top-nav{ background-color: #283036;padding: 0px; height: 50px; }
+    .top-nav{ background-color: #283036;padding: 0px 10px; height: 50px;width: 100%;  }
     .top-nav .container-fluid{ padding: 0; }
     .top-logo{ height: 40px; margin-top: 5px; }
     .navbar{ margin-bottom: 0; background-color: transparent; border: none; }
-    .top-nav .nav li a{ border-top: 3px solid transparent; height: 47px; z-index: 10;}
-    .top-nav .nav li.active a{ border-top-color: #f04949; }
-
+    .top-nav .nav{ background-color:  #283036; z-index: 10 ;}
+    .top-nav .nav li{   }
+    .top-nav .nav li a{background-color: #283036; border-top: 3px solid transparent; height: 47px; z-index: 10;}
+    .top-nav .nav li.active a{ }
+    #top-nav .navbar-inverse .navbar-nav > li > a:hover,
+    #top-nav .navbar-inverse .navbar-nav > li > a:focus{  border-top-color: #f04949; }
     .main { background-color: #f04949; color: #fff; font-size:1em; padding: 20px 0;}
     .main .img-responsive{ padding: 10%; min-height: 120px; min-width: 120px;}
     .main h4{ font-size: 2em; padding-top: 20px; }
@@ -121,7 +124,7 @@
     </div>
   </div>
   <!-- 主导航 -->
-  <div class="top-nav">
+  <div class="top-nav" id="top-nav">
 
     <div class="container">
       <nav class="navbar navbar-inverse  " role="navigation">
@@ -130,6 +133,8 @@
           <div class="navbar-header ">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
 
@@ -187,6 +192,8 @@
           <div class="navbar-header ">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#features-navbar">
               <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
@@ -425,7 +432,7 @@
   <!-- team  -->
   <div class="team">
 
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -491,17 +498,35 @@
             
           </div>
         </div>
-      </div>
+        <div class="item">
+          <!-- 栅格img -->
+          <div class="container">
+            <div class="row">
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
+              <div class="column col-xs-6 col-sm-3 col-md-3  text-center">
+                <img class="img-circle " src="images/tc 119.png" alt="...">
+                <p class="person-name">Frankie</p>
+              </div>
 
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+            </div>
+          </div>
+          
+          <div class="carousel-caption">
+            
+          </div>
+        </div>
+      </div>
 
       <!-- caption -->
       <div class="carousel-caption">
